@@ -1,0 +1,13 @@
+<div class="thumbnail">
+  <img src="https://picsum.photos/g/600/250/?blur" alt="...">
+  <div class="caption">
+    <h3>{{pet.name}}</h3>
+    <h5>Id: {{pet.id}}</h5>
+    <h5>Status: {{pet.status | uppercase}}</h5>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores laborum praesentium quisquam rem tempore! </p>
+    <p *ngIf="showDelete && authService.hasRoleAdmin()" class="text-right">
+      <button (click)="delete()" class="btn btn-danger">Delete</button>
+    </p>
+  </div>
+</div>
+

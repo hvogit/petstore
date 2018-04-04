@@ -1,0 +1,33 @@
+<h1>Add New Pet</h1>
+
+<form (ngSubmit)="add()" class="form-horizontal">
+
+  <div class="form-group">
+    <label for="pet-name" class="col-sm-2 control-label">Pet Name:</label>
+    <div class="col-sm-9">
+      <input [(ngModel)]="pet.name" name="name" class="form-control" id="pet-name">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="pet-desc" class="col-sm-2 control-label">Description:</label>
+    <div class="col-sm-9">
+      <textarea [(ngModel)]="pet.description" name="name" rows="5" class="form-control" id="pet-desc"></textarea>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Status:</label>
+    <div class="radio col-sm-9">
+      <label class="control-label radio-inline" *ngFor="let status of statuses" >
+        <input [(ngModel)]="pet.status" [value]="status" name="status" type="radio">
+        {{status | uppercase}}
+      </label>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-9">
+      <button class="btn btn-primary" type="submit">Add Pet</button>
+    </div>
+  </div>
+</form>

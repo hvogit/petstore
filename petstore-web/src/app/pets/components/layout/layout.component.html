@@ -1,0 +1,5 @@
+<div class="row">
+  <div class="col-sm-6 col-md-4" *ngFor="let pet of pets$ | async">
+    <app-pet [pet]="pet" [showDelete]="showDelete"></app-pet>
+  </div>
+</div>
