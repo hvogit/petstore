@@ -98,22 +98,6 @@ public class PetControllerTest {
                 .willReturn(ResponseEntity.ok(Lists.emptyList()));
     }
 
-//    @Test
-//    public void addPet() throws Exception {
-//        Pet pet = new Pet("Doggie", Pet.Status.sold);
-//        String location = "http://localhost:8080/api/pets/1";
-//        given(petController.add(pet)).willReturn(
-//                ResponseEntity.created(new URI(location)).body(pet));
-//
-//        mvc.perform(post(API)
-//                .param("name", "Doggie")
-//                .param("status", "sold"))
-//                .andExpect(status().isCreated())
-//                .andExpect(header().string("Location", is(location)))
-//                .andExpect(jsonPath("$.name", is("Doggie")))
-//                .andExpect(jsonPath("$.status", is("sold")));
-//    }
-
     @Test
     public void deletePet() throws Exception {
         given(petController.delete(1L)).willReturn(ResponseEntity.noContent().build());
