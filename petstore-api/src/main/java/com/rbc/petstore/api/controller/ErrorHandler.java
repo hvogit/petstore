@@ -24,7 +24,7 @@ public class ErrorHandler {
 
     private ResponseEntity<Error> error(Exception e, HttpStatus status) {
         Error error = new Error(e.getMessage(), UUID.randomUUID().toString());
-        log.error(error.getLogRef(), e);
+        log.info(String.format("Error: %s : %s", error.getLogRef(), e.getMessage()));
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(errorMediaType);

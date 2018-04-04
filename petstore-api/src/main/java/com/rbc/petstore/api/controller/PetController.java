@@ -28,7 +28,7 @@ public class PetController {
     @GetMapping("/{id}")
     public ResponseEntity<Pet> findById(@PathVariable Long id) {
         return repo.findById(id).map(ResponseEntity::ok)
-                .orElseThrow(() -> new PetNotFoundException(id));
+                .orElseThrow(() -> new PetNotFoundException());
     }
 
     @GetMapping(params = "name")
@@ -57,6 +57,6 @@ public class PetController {
         return repo.findById(id).map(pet -> {
             repo.delete(id);
             return ResponseEntity.noContent().build();
-        }).orElseThrow(() -> new PetNotFoundException(id));
+        }).orElseThrow(() -> new PetNotFoundException());
     }
 }

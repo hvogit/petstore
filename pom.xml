@@ -8,7 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>petstore-api</module>
-		<module>petstore-oauth</module>
+		<module>petstore-auth</module>
 	</modules>
     <packaging>pom</packaging>
 
